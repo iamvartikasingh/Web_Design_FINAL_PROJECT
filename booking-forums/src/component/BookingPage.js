@@ -67,23 +67,32 @@ const BookingPage = () => {
         backgroundRepeat: "no-repeat",
         height: "100vh",
         padding: "2rem",
-        color: "#243642",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <div
         style={{
-          backgroundColor: "rgba(255, 255, 255, 0.9)",
-          borderRadius: "15px",
+          backgroundColor: "#E2F1E7", // Light green outer box
+          borderRadius: "20px",
           padding: "2rem",
+          width: "90%",
           maxWidth: "1200px",
-          margin: "auto",
           boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
         }}
       >
         <div className="row">
           {/* Left Section: Booking Form */}
           <div className="col-md-6 mb-4">
-            <div className="card shadow-sm p-4" style={{ border: "none", backgroundColor: "#E2F1E7" }}>
+            <div
+              className="card shadow-sm p-4"
+              style={{
+                border: "none",
+                backgroundColor: "#FFFFFF", // White form
+                borderRadius: "10px",
+              }}
+            >
               <h5 className="card-title mb-4" style={{ color: "#387478" }}>
                 Book an Appointment
               </h5>
@@ -217,7 +226,7 @@ const BookingPage = () => {
           <div className="col-md-6">
             <div
               className="card shadow-sm p-4"
-              style={{ backgroundColor: "#E2F1E7", border: "none", height: "100%" }}
+              style={{ backgroundColor: "#FFFFFF", border: "none", height: "100%", borderRadius: "10px" }}
             >
               <h5 className="card-title mb-4" style={{ color: "#387478" }}>
                 Doctor's Availability

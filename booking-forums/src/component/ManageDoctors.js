@@ -165,7 +165,7 @@ const ManageDoctors = () => {
       <div
         style={{
           flex: 1.5, // 20% width
-          backgroundImage: `url("https://plus.unsplash.com/premium_photo-1665990294269-f1d6c35ab9d1?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")`,
+          backgroundImage: `url("https://images.pexels.com/photos/4098150/pexels-photo-4098150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
