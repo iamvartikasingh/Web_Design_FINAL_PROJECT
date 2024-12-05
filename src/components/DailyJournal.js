@@ -12,28 +12,45 @@ const DailyJournal = () => {
   };
 
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Daily Journal</h5>
-        <ul className="list-group mb-3">
-          {entries.map((item, index) => (
-            <li className="list-group-item" key={index}>
-              <small className="text-muted">{item.date}</small>
-              <p>{item.text}</p>
-            </li>
-          ))}
-        </ul>
-        <textarea
-          className="form-control mb-3"
-          rows="3"
-          placeholder="Write your journal entry"
-          value={entry}
-          onChange={(e) => setEntry(e.target.value)}
-        ></textarea>
-        <button className="btn btn-primary" onClick={addEntry}>
-          Add Entry
-        </button>
-      </div>
+    <div
+      className="rounded shadow p-4"
+      style={{
+        backgroundColor: "#629584",
+        color: "#243642",
+        minHeight: "300px",
+      }}
+    >
+      <h5 className="fw-bold mb-3">Daily Journal</h5>
+      <ul
+        className="list-group mb-3"
+        style={{
+          backgroundColor: "#387478",
+          color: "#E2F1E7",
+          maxHeight: "150px",
+          overflowY: "auto",
+        }}
+      >
+        {entries.map((item, index) => (
+          <li
+            key={index}
+            className="list-group-item"
+            style={{ backgroundColor: "#387478", color: "#E2F1E7" }}
+          >
+            <small className="text-muted">{item.date}</small>
+            <p>{item.text}</p>
+          </li>
+        ))}
+      </ul>
+      <textarea
+        className="form-control mb-3"
+        rows="3"
+        placeholder="Write your journal entry"
+        value={entry}
+        onChange={(e) => setEntry(e.target.value)}
+      ></textarea>
+      <button className="btn btn-light" onClick={addEntry}>
+        Add Entry
+      </button>
     </div>
   );
 };

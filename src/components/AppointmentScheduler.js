@@ -1,45 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const AppointmentScheduler = () => {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-
-  const handleSchedule = () => {
-    if (date && time) {
-      alert(`Appointment scheduled for ${date} at ${time}`);
-    } else {
-      alert("Please select both a date and time.");
-    }
-  };
-
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Appointment Scheduler</h5>
-        <div className="mb-3">
-          <label htmlFor="date" className="form-label">Pick a Date</label>
-          <input
-            type="date"
-            id="date"
-            className="form-control"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="time" className="form-label">Pick a Time</label>
-          <input
-            type="time"
-            id="time"
-            className="form-control"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-          />
-        </div>
-        <button className="btn btn-primary" onClick={handleSchedule}>
-          Schedule Appointment
-        </button>
-      </div>
+    <div
+      className="rounded shadow p-4"
+      style={{
+        backgroundColor: "#629584",
+        color: "#243642",
+        minHeight: "300px",
+      }}
+    >
+      <h5 className="fw-bold mb-3">My Appointments</h5>
+      <p>
+        <strong>Upcoming Appointment:</strong> <br />
+        <span>Date: 12th Dec 2024</span> <br />
+        <span>Time: 10:00 AM</span> <br />
+        <span>Doctor: Dr. Sarah Taylor</span>
+      </p>
+      <Link to="/appointments" className="btn btn-light">
+        Manage Appointments
+      </Link>
     </div>
   );
 };

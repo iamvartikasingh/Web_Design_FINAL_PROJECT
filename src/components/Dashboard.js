@@ -9,33 +9,79 @@ import DailyJournal from "./DailyJournal";
 import EducationalResources from "./EducationalResources";
 
 const Dashboard = () => {
+  const commonStyle = {
+    minHeight: "300px",
+    maxHeight: "300px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    borderRadius: "10px",
+    boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+  };
+
   return (
-    <div className="container-fluid py-4">
-      <h2 className="mb-4">Patient Dashboard</h2>
-      <div className="row g-3">
-        <div className="col-lg-4 col-md-6">
-          <ActivityTracker />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <YogaMeditation />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <AppointmentScheduler />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <ChatWithTherapist />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <MedicationReminder />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <ProgressDashboard />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <DailyJournal />
-        </div>
-        <div className="col-lg-4 col-md-6">
-          <EducationalResources />
+    <div
+      style={{
+        backgroundColor: "#E2F1E7",
+        minHeight: "100vh",
+        margin: "0",
+        padding: "0",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <h2 className="text-center fw-bold py-4" style={{ color: "#243642" }}>
+        Patient Dashboard
+      </h2>
+      <div
+        className="container-fluid"
+        style={{
+          maxWidth: "1200px",
+        }}
+      >
+        <div className="row g-4">
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <ActivityTracker />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <YogaMeditation />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <AppointmentScheduler />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <ChatWithTherapist />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <MedicationReminder />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <ProgressDashboard />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <DailyJournal />
+            </div>
+          </div>
+          <div className="col-lg-4 col-md-6">
+            <div style={commonStyle}>
+              <EducationalResources />
+            </div>
+          </div>
         </div>
       </div>
     </div>

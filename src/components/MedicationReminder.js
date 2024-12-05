@@ -12,27 +12,40 @@ const MedicationReminder = () => {
   };
 
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Medication Reminder</h5>
-        <ul className="list-group mb-3">
-          {reminders.map((item, index) => (
-            <li className="list-group-item" key={index}>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <input
-          type="text"
-          className="form-control mb-3"
-          placeholder="Add a new reminder"
-          value={reminder}
-          onChange={(e) => setReminder(e.target.value)}
-        />
-        <button className="btn btn-primary" onClick={addReminder}>
-          Add Reminder
-        </button>
-      </div>
+    <div
+      className="rounded shadow p-4"
+      style={{
+        backgroundColor: "#243642",
+        color: "#E2F1E7",
+        minHeight: "300px",
+      }}
+    >
+      <h5 className="fw-bold mb-3">Medication Reminder</h5>
+      <ul
+        className="list-group mb-3"
+        style={{
+          backgroundColor: "#387478",
+          color: "#E2F1E7",
+          maxHeight: "150px",
+          overflowY: "auto",
+        }}
+      >
+        {reminders.map((item, index) => (
+          <li key={index} className="list-group-item" style={{ backgroundColor: "#387478", color: "#E2F1E7" }}>
+            {item}
+          </li>
+        ))}
+      </ul>
+      <input
+        type="text"
+        className="form-control mb-3"
+        placeholder="Add a new reminder"
+        value={reminder}
+        onChange={(e) => setReminder(e.target.value)}
+      />
+      <button className="btn btn-light" onClick={addReminder}>
+        Add Reminder
+      </button>
     </div>
   );
 };

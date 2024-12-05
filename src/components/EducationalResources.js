@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const EducationalResources = () => {
   const resources = [
@@ -18,44 +18,71 @@ const EducationalResources = () => {
     },
   ];
 
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Educational Resources</h5>
+    <div
+      className="rounded shadow p-4"
+      style={{
+        backgroundColor: "#243642",
+        color: "#E2F1E7",
+        minHeight: "300px",
+        overflow: "hidden",
+        position: "relative",
+      }}
+    >
+      <h5 className="fw-bold mb-3">Educational Resources</h5>
+      <div>
         {resources.map((resource, index) => (
-          <div key={index} className="accordion mb-2" id={`accordion${index}`}>
-            <div className="accordion-item">
-              <h2 className="accordion-header" id={`heading${index}`}>
-                <button
-                  className="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target={`#collapse${index}`}
-                  aria-expanded="true"
-                  aria-controls={`collapse${index}`}
+          <div
+            key={index}
+            style={{
+              marginBottom: "10px",
+              position: "relative",
+            }}
+          >
+            <button
+              className="btn btn-block w-100 text-start"
+              style={{
+                backgroundColor: "#387478",
+                color: "#E2F1E7",
+                border: "none",
+                padding: "10px 15px",
+                borderRadius: "5px",
+              }}
+              onClick={() => toggleAccordion(index)}
+            >
+              {resource.category}
+            </button>
+            <div
+              style={{
+                maxHeight: expandedIndex === index ? "150px" : "0",
+                overflow: "hidden",
+                backgroundColor: "#629584",
+                color: "#E2F1E7",
+                transition: "max-height 0.5s ease-in-out",
+                padding: expandedIndex === index ? "10px" : "0 10px",
+                marginTop: expandedIndex === index ? "5px" : "0",
+                borderRadius: "5px",
+                boxShadow: expandedIndex === index ? "0 4px 6px rgba(0, 0, 0, 0.1)" : "none",
+              }}
+            >
+              {resource.links.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="d-block mb-2 text-light"
+                  style={{ textDecoration: "none" }}
                 >
-                  {resource.category}
-                </button>
-              </h2>
-              <div
-                id={`collapse${index}`}
-                className="accordion-collapse collapse show"
-                aria-labelledby={`heading${index}`}
-              >
-                <div className="accordion-body">
-                  {resource.links.map((link, idx) => (
-                    <a
-                      key={idx}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="d-block mb-1"
-                    >
-                      {link.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
+                  {link.name}
+                </a>
+              ))}
             </div>
           </div>
         ))}

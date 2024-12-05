@@ -9,16 +9,23 @@ const LandingPage = () => {
         className="py-5"
         style={{
           backgroundImage:
-            "url('https://source.unsplash.com/1920x800/?mental-health,therapy')",
+            "url('https://img.freepik.com/free-photo/world-mental-health-day-hand-holding-green-ribbon_1150-28333.jpg?semt=ais_hybrid')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           color: "#fff",
         }}
       >
-        <div className="container text-center">
-          <h1 className="display-4 fw-bold">You are not alone, we are always together</h1>
+        <div
+          className="container text-center"
+          style={{
+            paddingTop: "120px",
+            paddingBottom: "120px",
+          }}
+        >
+          <h2 className="display-5 fw-bold mb-4">Hello, User!</h2>
+          <h1 className="display-4 fw-bold">Your journey to a healthier you starts here</h1>
           <p className="lead">
-            Relax, none of this is your fault. Don’t stop. What you’re afraid of won’t happen.
+            Every small step counts. Together, we’ll create a positive path toward better mental health and well-being.
           </p>
           <div className="mt-4">
             <Link to="/appointments" className="btn btn-primary btn-lg me-3">
@@ -38,30 +45,45 @@ const LandingPage = () => {
           <div className="row">
             <div className="col-md-4">
               <img
-                src="https://source.unsplash.com/400x300/?teamwork,success"
+                src="https://images.pexels.com/photos/3184297/pexels-photo-3184297.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
                 alt="Achievements"
                 className="img-fluid mb-3"
-                style={{ borderRadius: "10px" }}
+                style={{
+                  borderRadius: "10px",
+                  height: "200px",
+                  objectFit: "cover",
+                  width: "100%",
+                }}
               />
               <h3 className="display-5 fw-bold">12k+</h3>
               <p>Cases Handled</p>
             </div>
             <div className="col-md-4">
               <img
-                src="https://source.unsplash.com/400x300/?rating,review"
+                src="https://images.pexels.com/photos/3184392/pexels-photo-3184392.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
                 alt="Ratings"
                 className="img-fluid mb-3"
-                style={{ borderRadius: "10px" }}
+                style={{
+                  borderRadius: "10px",
+                  height: "200px",
+                  objectFit: "cover",
+                  width: "100%",
+                }}
               />
               <h3 className="display-5 fw-bold">4.9</h3>
               <p>Rating from 12k+ People</p>
             </div>
             <div className="col-md-4">
               <img
-                src="https://source.unsplash.com/400x300/?experience,people"
+                src="https://images.pexels.com/photos/3184403/pexels-photo-3184403.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
                 alt="Experience"
                 className="img-fluid mb-3"
-                style={{ borderRadius: "10px" }}
+                style={{
+                  borderRadius: "10px",
+                  height: "200px",
+                  objectFit: "cover",
+                  width: "100%",
+                }}
               />
               <h3 className="display-5 fw-bold">10+</h3>
               <p>Years of Experience</p>
@@ -78,10 +100,15 @@ const LandingPage = () => {
             <div className="col-md-4">
               <div className="card h-100 text-center border-0">
                 <img
-                  src="https://source.unsplash.com/400x300/?therapy,counseling"
+                  src="https://images.pexels.com/photos/3184328/pexels-photo-3184328.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
                   className="card-img-top"
                   alt="Psychotherapy"
-                  style={{ borderRadius: "10px" }}
+                  style={{
+                    borderRadius: "10px",
+                    height: "200px",
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">Psychotherapy</h5>
@@ -92,10 +119,15 @@ const LandingPage = () => {
             <div className="col-md-4">
               <div className="card h-100 text-center border-0">
                 <img
-                  src="https://source.unsplash.com/400x300/?collaboration,team"
+                  src="https://images.pexels.com/photos/3184342/pexels-photo-3184342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=350&w=350"
                   className="card-img-top"
                   alt="Supervision"
-                  style={{ borderRadius: "10px" }}
+                  style={{
+                    borderRadius: "10px",
+                    height: "200px",
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">Supervision</h5>
@@ -106,10 +138,15 @@ const LandingPage = () => {
             <div className="col-md-4">
               <div className="card h-100 text-center border-0">
                 <img
-                  src="https://source.unsplash.com/400x300/?education,books"
+                  src="https://images.unsplash.com/photo-1554346084-f046088e2299?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
                   className="card-img-top"
                   alt="Psychoeducation"
-                  style={{ borderRadius: "10px" }}
+                  style={{
+                    borderRadius: "10px",
+                    height: "200px",
+                    objectFit: "cover",
+                    width: "100%",
+                  }}
                 />
                 <div className="card-body">
                   <h5 className="card-title fw-bold">Psychoeducation</h5>
@@ -124,20 +161,29 @@ const LandingPage = () => {
       </section>
 
       {/* Inspirational Quote Section */}
-      <section className="py-5 text-center" style={{ backgroundColor: "#f5f5f5" }}>
-        <div className="container">
+      <section
+        className="py-5 text-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1519337265831-281ec6cc8514?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          color: "#fff",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            borderRadius: "10px",
+            padding: "20px",
+          }}
+        >
           <blockquote className="blockquote">
-            <img
-              src="https://source.unsplash.com/400x300/?motivation,hope"
-              alt="Quote"
-              className="img-fluid mb-4"
-              style={{ borderRadius: "10px" }}
-            />
-            <p className="mb-4">
-              “But, in the end, a person needs more courage to live than to kill himself. Asking for help is not a sign
-              of weakness. It is a sign of strength.”
+            <p className="mb-4" style={{ fontSize: "1.5rem", fontStyle: "italic" }}>
+              “Mental health is not a destination, but a process. It's about how you drive, not where you're going.”
             </p>
-            <footer className="blockquote-footer">Anonymous</footer>
+            <footer className="blockquote-footer text-white">Noam Shpancer</footer>
           </blockquote>
         </div>
       </section>
