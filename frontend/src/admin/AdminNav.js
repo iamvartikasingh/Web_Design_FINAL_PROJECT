@@ -38,13 +38,7 @@ const AdminNav = () => {
           >
             Manage Patients
           </Nav.Link>
-          <Nav.Link
-            as={Link}
-            to="/admin/reports"
-            style={{ color: "#E2F1E7" }}
-          >
-            Reports
-          </Nav.Link>
+         
         </Nav>
         {/* Logout Link */}
         <Nav>

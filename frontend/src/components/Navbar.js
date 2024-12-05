@@ -47,16 +47,7 @@ function Navigation() {
             >
               Login
             </Nav.Link>
-            <Nav.Link
-              href="/services"
-              style={{
-                color: '#E2F1E7',
-                fontSize: '1.2rem',
-                margin: '0 10px',
-              }}
-            >
-              Services
-            </Nav.Link>
+       
           </Nav>
         </Navbar.Collapse>
       </Container>
