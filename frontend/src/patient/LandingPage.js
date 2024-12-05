@@ -84,7 +84,7 @@ const LandingPage = () => {
         better mental health and well-being.
       </p>
       <div className="mt-4">
-        <Link to="/appointments" className="btn btn-primary btn-lg me-3">
+        <Link to="/my-appointments" className="btn btn-primary btn-lg me-3">
           Book an Appointment
         </Link>
         <Link to="/dashboard" className="btn btn-outline-light btn-lg">
