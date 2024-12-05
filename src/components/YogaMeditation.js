@@ -8,20 +8,34 @@ const YogaMeditation = () => {
   ];
 
   return (
-    <div className="card mb-3">
-      <div className="card-body">
-        <h5 className="card-title">Yoga and Meditation</h5>
-        <ul className="list-group">
-          {sessions.map((session, index) => (
-            <li className="list-group-item d-flex align-items-center" key={index}>
-              <span className="me-2">&#9658;</span>
-              <a href={session.link} target="_blank" rel="noopener noreferrer">
-                {session.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div
+      className="rounded shadow p-4"
+      style={{
+        backgroundColor: "#387478",
+        color: "#E2F1E7",
+        minHeight: "300px",
+      }}
+    >
+      <h5 className="fw-bold mb-3">Yoga and Meditation</h5>
+      <ul className="list-group">
+        {sessions.map((session, index) => (
+          <li
+            key={index}
+            className="list-group-item d-flex justify-content-between align-items-center"
+            style={{ backgroundColor: "#243642", color: "#E2F1E7" }}
+          >
+            <span>&#9658; {session.name}</span>
+            <a
+              href={session.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-sm btn-outline-light"
+            >
+              View
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
