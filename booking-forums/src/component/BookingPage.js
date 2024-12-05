@@ -59,122 +59,189 @@ const BookingPage = () => {
   };
 
   return (
-    <div className="container my-5">
-      <div className="row">
-        {/* Left Section: Booking Form */}
-        <div className="col-md-6 mb-4">
-          <div className="card shadow-sm p-4">
-            <h5 className="card-title mb-4">Book an Appointment</h5>
-            <form onSubmit={handleSubmit}>
-              <div className="mb-3">
-                <label htmlFor="name" className="form-label">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="name"
-                  value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="doctor" className="form-label">
-                  Doctor
-                </label>
-                <select
-                  className="form-select"
-                  id="doctor"
-                  value={selectedDoctor}
-                  onChange={(e) => {
-                    setSelectedDoctor(e.target.value);
-                    setForm({ ...form, doctor: e.target.value });
+    <div
+      style={{
+        backgroundImage: `url("https://images.pexels.com/photos/5699435/pexels-photo-5699435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        height: "100vh",
+        padding: "2rem",
+        color: "#243642",
+      }}
+    >
+      <div
+        style={{
+          backgroundColor: "rgba(255, 255, 255, 0.9)",
+          borderRadius: "15px",
+          padding: "2rem",
+          maxWidth: "1200px",
+          margin: "auto",
+          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
+        }}
+      >
+        <div className="row">
+          {/* Left Section: Booking Form */}
+          <div className="col-md-6 mb-4">
+            <div className="card shadow-sm p-4" style={{ border: "none", backgroundColor: "#E2F1E7" }}>
+              <h5 className="card-title mb-4" style={{ color: "#387478" }}>
+                Book an Appointment
+              </h5>
+              <form onSubmit={handleSubmit}>
+                <div className="mb-3">
+                  <label htmlFor="name" className="form-label" style={{ color: "#243642" }}>
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="name"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    required
+                    style={{
+                      backgroundColor: "#E2F1E7",
+                      borderColor: "#387478",
+                      color: "#243642",
+                    }}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="doctor" className="form-label" style={{ color: "#243642" }}>
+                    Doctor
+                  </label>
+                  <select
+                    className="form-select"
+                    id="doctor"
+                    value={selectedDoctor}
+                    onChange={(e) => {
+                      setSelectedDoctor(e.target.value);
+                      setForm({ ...form, doctor: e.target.value });
+                    }}
+                    required
+                    style={{
+                      backgroundColor: "#E2F1E7",
+                      borderColor: "#387478",
+                      color: "#243642",
+                    }}
+                  >
+                    <option value="">Select a doctor</option>
+                    <option value="Dr. Smith">Dr. Smith</option>
+                    <option value="Dr. John">Dr. John</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="date" className="form-label" style={{ color: "#243642" }}>
+                    Date
+                  </label>
+                  <input
+                    type="date"
+                    className="form-control"
+                    id="date"
+                    value={selectedDate}
+                    onChange={(e) => {
+                      setSelectedDate(e.target.value);
+                      setForm({ ...form, date: e.target.value });
+                    }}
+                    required
+                    style={{
+                      backgroundColor: "#E2F1E7",
+                      borderColor: "#387478",
+                      color: "#243642",
+                    }}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="time" className="form-label" style={{ color: "#243642" }}>
+                    Available Time Slots
+                  </label>
+                  <select
+                    className="form-select"
+                    id="time"
+                    value={form.time}
+                    onChange={(e) => setForm({ ...form, time: e.target.value })}
+                    disabled={!availableSlots.length} // Disable if no available slots
+                    required
+                    style={{
+                      backgroundColor: "#E2F1E7",
+                      borderColor: "#387478",
+                      color: "#243642",
+                    }}
+                  >
+                    <option value="">Select a time slot</option>
+                    {availableSlots.map((slot, index) => (
+                      <option key={index} value={slot.time}>
+                        {slot.time}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="location" className="form-label" style={{ color: "#243642" }}>
+                    Location
+                  </label>
+                  <select
+                    className="form-select"
+                    id="location"
+                    value={form.location}
+                    onChange={(e) => setForm({ ...form, location: e.target.value })}
+                    required
+                    style={{
+                      backgroundColor: "#E2F1E7",
+                      borderColor: "#387478",
+                      color: "#243642",
+                    }}
+                  >
+                    <option value="Virtual Video Call">Virtual Video Call</option>
+                    <option value="In-Person Meetup">In-Person Meetup</option>
+                  </select>
+                </div>
+                <button
+                  type="submit"
+                  className="btn w-100"
+                  style={{
+                    backgroundColor: "#387478",
+                    color: "#E2F1E7",
+                    border: "none",
+                    padding: "0.8rem",
                   }}
-                  required
+                  disabled={!form.time} // Disable submit if no time is selected
                 >
-                  <option value="">Select a doctor</option>
-                  <option value="Dr. Smith">Dr. Smith</option>
-                  <option value="Dr. John">Dr. John</option>
-                </select>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="date" className="form-label">
-                  Date
-                </label>
-                <input
-                  type="date"
-                  className="form-control"
-                  id="date"
-                  value={selectedDate}
-                  onChange={(e) => {
-                    setSelectedDate(e.target.value);
-                    setForm({ ...form, date: e.target.value });
-                  }}
-                  required
-                />
-              </div>
-              <div className="mb-3">
-                <label htmlFor="time" className="form-label">
-                  Available Time Slots
-                </label>
-                <select
-                  className="form-select"
-                  id="time"
-                  value={form.time}
-                  onChange={(e) => setForm({ ...form, time: e.target.value })}
-                  disabled={!availableSlots.length} // Disable if no available slots
-                  required
-                >
-                  <option value="">Select a time slot</option>
-                  {availableSlots.map((slot, index) => (
-                    <option key={index} value={slot.time}>
-                      {slot.time}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="location" className="form-label">
-                  Location
-                </label>
-                <select
-                  className="form-select"
-                  id="location"
-                  value={form.location}
-                  onChange={(e) => setForm({ ...form, location: e.target.value })}
-                  required
-                >
-                  <option value="Virtual Video Call">Virtual Video Call</option>
-                  <option value="In-Person Meetup">In-Person Meetup</option>
-                </select>
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary w-100"
-                disabled={!form.time} // Disable submit if no time is selected
-              >
-                Book Appointment
-              </button>
-            </form>
+                  Book Appointment
+                </button>
+              </form>
+            </div>
           </div>
-        </div>
 
-        {/* Right Section: Doctor's Schedule */}
-        <div className="col-md-6">
-          <div className="card shadow-sm p-4">
-            <h5 className="card-title mb-4">Doctor's Availability</h5>
-            {availableSlots.length > 0 ? (
-              <ul className="list-group">
-                {availableSlots.map((slot, index) => (
-                  <li key={index} className="list-group-item">
-                    {slot.time}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p>No available slots. Select a doctor and date.</p>
-            )}
+          {/* Right Section: Doctor's Schedule */}
+          <div className="col-md-6">
+            <div
+              className="card shadow-sm p-4"
+              style={{ backgroundColor: "#E2F1E7", border: "none", height: "100%" }}
+            >
+              <h5 className="card-title mb-4" style={{ color: "#387478" }}>
+                Doctor's Availability
+              </h5>
+              {availableSlots.length > 0 ? (
+                <ul className="list-group">
+                  {availableSlots.map((slot, index) => (
+                    <li
+                      key={index}
+                      className="list-group-item"
+                      style={{
+                        backgroundColor: "#E2F1E7",
+                        color: "#243642",
+                        borderColor: "#387478",
+                      }}
+                    >
+                      {slot.time}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p style={{ color: "#243642" }}>No available slots. Select a doctor and date.</p>
+              )}
+            </div>
           </div>
         </div>
       </div>
